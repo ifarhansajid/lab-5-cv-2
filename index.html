@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Farhan OS</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="bootScreen">
+    <div class="terminal">
+        <p id="bootText"></p>
+    </div>
+</div>
+
+<canvas id="matrix"></canvas>
+
+<div id="desktop">
+
+    <div class="topbar">
+        <span>Farhan OS v1.0</span>
+        <span id="clock"></span>
+    </div>
+
+
+    <div class="icons">
+
+        <div class="icon" onclick="openWindow('about')">
+            📁
+            <span>About.exe</span>
+        </div>
+
+        <div class="icon" onclick="openWindow('skills')">
+            📁
+            <span>Skills.exe</span>
+        </div>
+
+        <div class="icon" onclick="openWindow('education')">
+            📁
+            <span>Education.exe</span>
+        </div>
+
+        <div class="icon" onclick="openWindow('projects')">
+            📁
+            <span>Projects.exe</span>
+        </div>
+
+        <div class="icon" onclick="openWindow('contact')">
+            📁
+            <span>Contact.exe</span>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="window" id="about">
+
+<div class="titlebar">
+About.exe
+<button onclick="closeWindow('about')">X</button>
+</div>
+
+<div class="content">
+
+<h2>Farhan Sajid</h2>
+
+<p>
+Computer Science student passionate about software
+development and web technologies.
+</p>
+
+<p>
+Building responsive websites while improving
+my programming and problem solving skills.
+</p>
+
+</div>
+</div>
+
+<div class="window" id="skills">
+
+<div class="titlebar">
+Skills.exe
+<button onclick="closeWindow('skills')">X</button>
+</div>
+
+<div class="content terminal-output">
+
+HTML ██████████ 95%
+
+CSS █████████░ 90%
+
+JAVA ████████░░ 80%
+
+GIT █████████░ 90%
+
+GITHUB ██████████ 95%
+
+</div>
+
+</div>
+
+<div class="window" id="education">
+
+<div class="titlebar">
+Education.exe
+<button onclick="closeWindow('education')">X</button>
+</div>
+
+<div class="content">
+
+<h3>BS Computer Science</h3>
+
+<p>Computer Science Student</p>
+
+<p>2024 - Present</p>
+
+</div>
+
+</div>
+
+<div class="window" id="projects">
+
+<div class="titlebar">
+Projects.exe
+<button onclick="closeWindow('projects')">X</button>
+</div>
+
+<div class="content">
+
+<div class="project">
+
+<h3>Campus Cafe</h3>
+
+<a href="https://github.com/ifarhansajid/cit331-lab4-campus-cafe">
+GitHub
+</a>
+
+</div>
+
+<br>
+
+<div class="project">
+
+<h3>CIT331 Assignment</h3>
+
+<a href="https://github.com/ifarhansajid/cit331-assignment1-f26-bscs-0019">
+GitHub
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="window" id="contact">
+
+<div class="titlebar">
+Contact.exe
+<button onclick="closeWindow('contact')">X</button>
+</div>
+
+<div class="content">
+
+<p>GitHub</p>
+
+<a href="https://github.com/ifarhansajid">
+@ifarhansajid
+</a>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
