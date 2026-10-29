@@ -184,3 +184,128 @@ align-items:center;
 font-size:24px;
 color:#64FFDA;
 }
+
+/* ==========================
+   MOBILE RESPONSIVE
+========================== */
+
+@media (max-width: 992px){
+
+    body{
+        overflow-y:auto;
+        overflow-x:hidden;
+        height:auto;
+        min-height:100vh;
+    }
+
+    .top-title{
+        font-size:16px;
+        letter-spacing:2px;
+        top:15px;
+    }
+
+    .center-profile{
+
+        position:relative;
+
+        width:220px;
+        height:320px;
+
+        left:50%;
+        top:100px;
+
+        transform:translateX(-50%);
+
+        margin-bottom:140px;
+    }
+
+    .r1{
+        width:280px;
+        height:280px;
+    }
+
+    .r2{
+        width:340px;
+        height:340px;
+    }
+
+    .panel{
+
+        position:relative;
+
+        width:90%;
+
+        left:auto !important;
+        right:auto !important;
+        top:auto !important;
+        bottom:auto !important;
+
+        margin:15px auto;
+
+        animation:none;
+    }
+
+    .about,
+    .skills,
+    .education,
+    .projects{
+        position:relative;
+    }
+
+    .footer{
+
+        position:relative;
+
+        margin:30px 0;
+
+        bottom:auto;
+    }
+}
+
+/* ==========================
+   SMALL PHONES
+========================== */
+
+@media (max-width: 576px){
+
+    .top-title{
+        font-size:14px;
+    }
+
+    .center-profile{
+
+        width:180px;
+        height:260px;
+
+        margin-top:30px;
+    }
+
+    .panel{
+        width:95%;
+        padding:15px;
+    }
+
+    .panel h3{
+        font-size:15px;
+    }
+
+    .panel p,
+    .panel a,
+    .skill{
+        font-size:13px;
+    }
+
+    .r1{
+        width:240px;
+        height:240px;
+    }
+
+    .r2{
+        width:280px;
+        height:280px;
+    }
+
+    .footer{
+        font-size:12px;
+    }
+}
