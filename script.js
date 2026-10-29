@@ -1,14 +1,12 @@
-/* ====================
-   BOOT SCREEN
-==================== */
+/* BOOT SCREEN */
 
 const bootText = [
 
-    "Initializing Farhan OS...",
-    "Loading Portfolio...",
-    "Loading Skills...",
-    "Loading Projects...",
-    "Welcome Farhan Sajid"
+"Initializing Farhan OS...",
+"Loading Portfolio...",
+"Loading Skills...",
+"Loading Projects...",
+"Welcome Farhan Sajid"
 
 ];
 
@@ -18,8 +16,8 @@ function showBoot(){
 
     if(i < bootText.length){
 
-        document.getElementById("bootText").innerHTML =
-        bootText[i];
+        document.getElementById("bootText")
+        .innerHTML = bootText[i];
 
         i++;
 
@@ -34,48 +32,44 @@ function showBoot(){
 
 showBoot();
 
-/* ====================
-   WINDOWS
-==================== */
+/* WINDOW OPEN */
 
 function openWindow(id){
 
-    const win =
-    document.getElementById(id);
+    document
+    .querySelectorAll(".window")
+    .forEach(win => {
 
-    win.style.display = "block";
+        win.style.display = "none";
 
-    if(window.innerWidth > 768){
+    });
 
-        win.style.left =
-        ((window.innerWidth - win.offsetWidth)/2)
-        + "px";
-
-        win.style.top = "90px";
-    }
+    document
+    .getElementById(id)
+    .style.display = "block";
 }
+
+/* WINDOW CLOSE */
 
 function closeWindow(id){
 
-    document.getElementById(id)
+    document
+    .getElementById(id)
     .style.display = "none";
 }
 
-/* ====================
-   CLOCK
-==================== */
+/* CLOCK */
 
 setInterval(()=>{
 
-    document.getElementById("clock")
+    document
+    .getElementById("clock")
     .innerHTML =
     new Date().toLocaleTimeString();
 
 },1000);
 
-/* ====================
-   MATRIX EFFECT
-==================== */
+/* MATRIX EFFECT */
 
 const canvas =
 document.getElementById("matrix");
@@ -83,33 +77,20 @@ document.getElementById("matrix");
 const ctx =
 canvas.getContext("2d");
 
-function resizeCanvas(){
+canvas.width =
+window.innerWidth;
 
-    canvas.width =
-    window.innerWidth;
-
-    canvas.height =
-    window.innerHeight;
-}
-
-resizeCanvas();
-
-window.addEventListener(
-    "resize",
-    resizeCanvas
-);
+canvas.height =
+window.innerHeight;
 
 const chars =
 "01{}<>[]HTMLCSSJAVAGITHUB";
 
 const drops = [];
 
-for(
-let x = 0;
-x < canvas.width / 20;
-x++
-){
-    drops[x] = 1;
+for(let i=0;i<canvas.width/20;i++){
+
+    drops[i]=1;
 }
 
 function draw(){
@@ -130,13 +111,9 @@ function draw(){
     ctx.font =
     "15px monospace";
 
-    for(
-        let i = 0;
-        i < drops.length;
-        i++
-    ){
+    for(let i=0;i<drops.length;i++){
 
-        let text =
+        const text =
         chars[
             Math.floor(
                 Math.random()
@@ -146,21 +123,32 @@ function draw(){
 
         ctx.fillText(
             text,
-            i * 20,
-            drops[i] * 20
+            i*20,
+            drops[i]*20
         );
 
         if(
-            drops[i] * 20
-            > canvas.height
-            &&
-            Math.random() > 0.97
+            drops[i]*20 >
+            canvas.height &&
+            Math.random() > .97
         ){
-            drops[i] = 0;
+            drops[i]=0;
         }
 
         drops[i]++;
     }
 }
 
-setInterval(draw, 50);
+setInterval(draw,50);
+
+window.addEventListener(
+"resize",
+()=>{
+
+    canvas.width =
+    window.innerWidth;
+
+    canvas.height =
+    window.innerHeight;
+
+});
