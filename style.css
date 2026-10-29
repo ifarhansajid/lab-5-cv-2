@@ -1,311 +1,351 @@
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Poppins,sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Poppins,sans-serif;
 }
 
 body{
-overflow:hidden;
-background:#0A192F;
-color:#CCD6F6;
-height:100vh;
+    background:#0A192F;
+    color:#CCD6F6;
+    min-height:100vh;
+    overflow:hidden;
 }
 
 #matrix{
-position:fixed;
-top:0;
-left:0;
-z-index:-2;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:-2;
 }
+
+/* TOP BAR */
 
 .topbar{
-height:50px;
-background:#112240;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:0 20px;
-color:#64FFDA;
+    height:50px;
+    width:100%;
+    background:#112240;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 20px;
+    color:#64FFDA;
 }
 
+/* PROFILE */
+
 .profile{
-position:absolute;
-right:50px;
-bottom:40px;
-width:350px;
+    position:absolute;
+    right:40px;
+    bottom:40px;
+    width:320px;
+    border-radius:25px;
 
-border-radius:30px;
+    box-shadow:
+    0 0 20px #64FFDA,
+    0 0 60px rgba(100,255,218,.5);
 
-box-shadow:
-0 0 20px #64FFDA,
-0 0 60px #64FFDA;
-
-animation:float 4s ease infinite;
+    animation:float 4s ease infinite;
 }
 
 @keyframes float{
 
-50%{
-transform:translateY(-15px);
-}
+    50%{
+        transform:translateY(-15px);
+    }
 
 }
+
+/* DESKTOP ICONS */
 
 .icons{
-padding:20px;
-display:flex;
-flex-direction:column;
-gap:20px;
+    padding:20px;
+    display:flex;
+    flex-direction:column;
+    gap:20px;
 }
 
 .icon{
-cursor:pointer;
-font-size:40px;
-width:100px;
-text-align:center;
+    cursor:pointer;
+    font-size:40px;
+    width:100px;
+    text-align:center;
+    transition:.3s;
+}
+
+.icon:hover{
+    transform:scale(1.1);
 }
 
 .icon span{
-display:block;
-font-size:12px;
-margin-top:5px;
+    display:block;
+    font-size:12px;
+    margin-top:5px;
+    color:white;
 }
+
+/* WINDOWS */
 
 .window{
 
-position:absolute;
+    position:absolute;
 
-width:450px;
+    width:450px;
 
-min-height:250px;
+    min-height:250px;
 
-background:#112240;
+    background:#112240;
 
-border:1px solid #64FFDA;
+    border:1px solid #64FFDA;
 
-border-radius:15px;
+    border-radius:15px;
 
-display:none;
+    display:none;
 
-animation:popup .5s;
+    box-shadow:
+    0 0 15px rgba(100,255,218,.2);
+
+    animation:popup .4s ease;
 }
 
 @keyframes popup{
 
-from{
-transform:scale(.3);
-opacity:0;
-}
+    from{
+        transform:scale(.5);
+        opacity:0;
+    }
 
-to{
-transform:scale(1);
-opacity:1;
-}
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+
 }
 
 .titlebar{
 
-display:flex;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 
-justify-content:space-between;
+    background:#09111F;
 
-background:#09111F;
+    padding:12px;
 
-padding:10px;
+    border-radius:15px 15px 0 0;
 
-color:#64FFDA;
+    color:#64FFDA;
 }
 
 .titlebar button{
 
-background:none;
+    background:none;
 
-border:none;
+    border:none;
 
-color:red;
+    color:red;
 
-font-size:18px;
+    font-size:18px;
 
-cursor:pointer;
+    cursor:pointer;
 }
 
 .content{
-padding:20px;
+    padding:20px;
 }
 
 a{
-color:#64FFDA;
+    color:#64FFDA;
+    text-decoration:none;
 }
 
-#about{
-top:100px;
-left:180px;
-}
-
-#skills{
-top:140px;
-left:280px;
-}
-
-#education{
-top:180px;
-left:380px;
-}
-
-#projects{
-top:220px;
-left:480px;
-}
-
-#contact{
-top:260px;
-left:580px;
-}
+/* BOOT SCREEN */
 
 #bootScreen{
 
-position:fixed;
+    position:fixed;
 
-inset:0;
+    inset:0;
 
-background:black;
+    background:black;
 
-z-index:5000;
+    z-index:6000;
 
-display:flex;
+    display:flex;
 
-justify-content:center;
+    justify-content:center;
 
-align-items:center;
+    align-items:center;
 }
 
 .terminal{
-font-size:24px;
-color:#64FFDA;
+
+    color:#64FFDA;
+
+    font-size:28px;
 }
 
-/* ==========================
-   MOBILE RESPONSIVE
-========================== */
+/* DEFAULT POSITIONS */
 
-@media (max-width: 992px){
+#about{
+    top:80px;
+    left:120px;
+}
+
+#skills{
+    top:120px;
+    left:200px;
+}
+
+#education{
+    top:160px;
+    left:280px;
+}
+
+#projects{
+    top:200px;
+    left:360px;
+}
+
+#contact{
+    top:240px;
+    left:440px;
+}
+
+/* ===========================
+   TABLET
+=========================== */
+
+@media(max-width:992px){
 
     body{
         overflow-y:auto;
         overflow-x:hidden;
+    }
+
+    .topbar{
+
         height:auto;
-        min-height:100vh;
+        padding:15px;
+        flex-wrap:wrap;
     }
 
-    .top-title{
-        font-size:16px;
-        letter-spacing:2px;
-        top:15px;
-    }
+    .profile{
 
-    .center-profile{
+        width:250px;
+
+        display:block;
 
         position:relative;
 
-        width:220px;
-        height:320px;
+        right:auto;
+        bottom:auto;
 
-        left:50%;
-        top:100px;
-
-        transform:translateX(-50%);
-
-        margin-bottom:140px;
+        margin:20px auto;
     }
 
-    .r1{
-        width:280px;
-        height:280px;
+    .icons{
+
+        flex-direction:row;
+
+        justify-content:center;
+
+        flex-wrap:wrap;
     }
 
-    .r2{
-        width:340px;
-        height:340px;
-    }
-
-    .panel{
+    .window{
 
         position:relative;
+
+        display:block;
 
         width:90%;
 
+        margin:20px auto;
+
         left:auto !important;
-        right:auto !important;
         top:auto !important;
-        bottom:auto !important;
-
-        margin:15px auto;
-
-        animation:none;
-    }
-
-    .about,
-    .skills,
-    .education,
-    .projects{
-        position:relative;
-    }
-
-    .footer{
-
-        position:relative;
-
-        margin:30px 0;
-
-        bottom:auto;
     }
 }
 
-/* ==========================
-   SMALL PHONES
-========================== */
+/* ===========================
+   MOBILE
+=========================== */
 
-@media (max-width: 576px){
+@media(max-width:576px){
 
-    .top-title{
-        font-size:14px;
+    .topbar{
+
+        flex-direction:column;
+
+        gap:8px;
+
+        text-align:center;
     }
 
-    .center-profile{
+    .profile{
 
         width:180px;
-        height:260px;
-
-        margin-top:30px;
     }
 
-    .panel{
+    .icon{
+
+        width:70px;
+
+        font-size:30px;
+    }
+
+    .icon span{
+
+        font-size:10px;
+    }
+
+    .window{
+
         width:95%;
-        padding:15px;
+
+        min-height:auto;
     }
 
-    .panel h3{
-        font-size:15px;
-    }
+    .titlebar{
 
-    .panel p,
-    .panel a,
-    .skill{
         font-size:13px;
     }
 
-    .r1{
-        width:240px;
-        height:240px;
+    .content{
+
+        font-size:14px;
+
+        padding:15px;
     }
 
-    .r2{
-        width:280px;
-        height:280px;
+    .terminal{
+
+        font-size:18px;
+
+        text-align:center;
+    }
+}
+
+/* ===========================
+   EXTRA SMALL PHONES
+=========================== */
+
+@media(max-width:360px){
+
+    .profile{
+        width:150px;
     }
 
-    .footer{
-        font-size:12px;
+    .icon{
+        width:60px;
+    }
+
+    .icon span{
+        font-size:9px;
+    }
+
+    .window{
+        width:98%;
     }
 }
